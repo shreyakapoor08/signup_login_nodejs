@@ -1,0 +1,12 @@
+{
+  "SERVER": {
+    "PORT": 9876
+  },
+  "DB": {
+    "USER": "basicuser",
+    "DATABASE": "basicform",
+    "PASSWORD": "basicpass",
+    "HOST": "localhost",
+    "DIALECT": "mysql"
+  }
+}
