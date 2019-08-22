@@ -31,24 +31,25 @@ const User = db.define('users', {
         type: DataTypes.STRING,
         allowNull: false
     }
-})
+});
 
 const Passwords = db.define('password', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
+
     },
     password: DataTypes.STRING
-    })
+    });
 
 Passwords.belongsTo(User);
 User.hasOne(Passwords);
 
 db.sync({alter: true})
     .then(() => console.info("Database Configured"))
-    .catch((err) => console.error(err))
+    .catch((err) => console.error(err));
 
 exports.models = {
     User, Passwords
-}
+};

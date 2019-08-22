@@ -1,6 +1,6 @@
 const route = require('express').Router();
 //const User = require('../db/model').models.User;
-const passport = require('./passport/passport').passport
+const passport = require('./passport/passport').passport;
 
 route.get('/',(req,res) => {
     if(req.user)
@@ -18,6 +18,7 @@ route.post('/',(req,res,next) => {
         },
         function (err, user, info) {
             if (err) {
+                console.log('Inside Error')
                 return res.send({user: null, userFound: false})
             }
             if (!user) {
@@ -34,4 +35,6 @@ route.post('/',(req,res,next) => {
 });
 
 
-exports.route = route
+exports = module.exports = {
+    route
+}
