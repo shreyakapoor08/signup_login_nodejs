@@ -1,5 +1,5 @@
 const route = require('express').Router();
-//const User = require('../db/model').models.User;
+//const User = require('../db/model')
 const passport = require('./passport/passport').passport;
 
 route.get('/',(req,res) => {
@@ -35,6 +35,4 @@ route.post('/',(req,res,next) => {
 });
 
 
-exports = module.exports = {
-    route
-}
+exports.route = route

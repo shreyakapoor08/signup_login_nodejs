@@ -14,11 +14,15 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(id, done) {
     DatabaseLogin.findAll(
         {
-            where: {id: id}
+            //agar yeh naa bhi kare toh kya farak padega ?
+            where: {id: id} //*yeh samajh nahi aya id ke ander konsi id daal rahe hai
         }
+        //So either require the whole file - then u have to do
+        // DatabaseLogin.(models).Users
+        //or require just the models - then u can use all the data members of models -
     ).then((user) => {
         console.log('User Deserialize')
-        return done(false,user)
+        return done(false,user) //*done ke kya parameters hai jismai humne false aur user bheja hai ? error, user
     }).catch((err) => console.error(err))
 });
 

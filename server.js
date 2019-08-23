@@ -23,6 +23,7 @@ app.use(cookieParser());
 app.use(passport.initialize());
 app.use(session({
     proxy: true,
+    resave: true,
     saveUninitialized: true
 }));
 
